@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brain Tumor Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 0px 30px;
+            /* background-image: url("{{ url_for('static', filename='back2.png') }}"); */
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+        }
+        form {
+            margin-top: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            transform: scale(1.2);
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        .hi{
+            display: flex;
+            flex-direction: column;
+            margin:10px auto;
+            text-align: left;
+            width: 100%;
+            justify-content: space-around
+        }
+    </style>
+</head>
+
+<body>
+    
+    <p style="margin-top: 50px;">Brain Tumor Classification</p>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" id="k">
+        <input type="submit" value="Upload">
+    </form>
+    {% if result_display %}
+    {% if img_data %}
+    <div>
+        <img src="data:image/png;base64,{{ img_data }}" alt="Uploaded Image">
+    </div>
+    {% endif %}
+    <p>{{ predict }}</p>
+    {% endif %}
+    {% if a %}
+    <div class="hi">
+        <h2>Glioma Tumor</h2>
+        <p>
+            Gliomas are a type of brain tumor. While there are no specific preventive measures, maintaining a healthy
+            lifestyle is essential. Consult with your healthcare provider for personalized advice. General precautions
+            may
+            include:
+        <ul>
+            <li>Regular medical check-ups</li>
+            <li>Healthy diet and hydration</li>
+            <li>Avoidance of tobacco and excessive alcohol</li>
+            <li>Protective headgear in activities with a risk of head injury</li>
+            <li>Stress management techniques</li>
+        </ul>
+        </p>
+    </div>
+    {% endif %}
+    {% if b %}
+    <div class="hi">
+        <h2>Meningioma Tumor</h2>
+        <p>
+            Meningiomas are often slow-growing tumors. Precautions may include:
+        <ul>
+            <li>Regular health monitoring</li>
+            <li>Genetic counseling if there's a family history</li>
+            <li>Minimizing exposure to environmental toxins</li>
+            <li>Consulting with a healthcare provider for specific guidance</li>
+        </ul>
+        </p>
+    </div>
+    {% endif %}
+    {% if c %}
+    <div class="hi">
+        <h2>Pituitary Tumor</h2>
+        <p>
+            Pituitary tumors affect the pituitary gland. Precautions may involve:
+        <ul>
+            <li>Regular medical check-ups, including hormone level monitoring</li>
+            <li>Consulting with an endocrinologist for specialized care</li>
+            <li>Following prescribed treatments and medications</li>
+            <li>Adopting a healthy lifestyle with proper nutrition and exercise</li>
+        </ul>
+        </p>
+    </div>
+    {% endif %}
+</body>
+
+</html>

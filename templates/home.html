@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Classification</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: left;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        p {
+            margin-top: 10px;
+            color: #555;
+            text-align: justify;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .prediction-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .prediction-button:hover {
+            background-color: #0056b3;
+        }
+        .im{
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+        }
+        .im1{
+            width: 55%;
+        }
+        .im2{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("{{ url_for('static', filename='Brain-tumor.jpg') }}");
+            margin: 10px;
+            width: 45%;
+            margin-left: 20px;
+        }
+        marquee{
+            color: red;
+            font-size: larger;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <marquee behavior="" direction="">Welcome to our website</marquee>
+    <div class="im">
+        <div class="im1">
+            <h1>Exploring Brain Tumor Classification</h1>
+
+            <p>
+                Welcome to our exploration of brain tumor classification, a vital aspect of modern medical diagnostics.
+                As
+                technology continues to advance, so does our ability to understand and categorize various types of brain
+                tumors with greater precision.
+            </p>
+
+            <h2>The Importance of Classification</h2>
+            <p>
+                Brain tumors are complex, and their characteristics can vary widely. Accurate classification is crucial
+                for
+                determining the most effective treatment strategies and understanding the prognosis for patients. Recent
+                advancements in medical imaging and machine learning have played a pivotal role in enhancing our ability
+                to
+                classify brain tumors based on their features and patterns.
+            </p>
+
+            <h2>About Brain Tumor Classification Platform</h2>
+            <p>
+                Our Brain Tumor Classification platform is designed to provide information and potential assistance in
+                the
+                classification of brain tumors. While this is a simplified example for demonstration purposes, the
+                integration of predictive models based on real-world data is a promising avenue for the future of
+                medical
+                diagnostics.
+            </p>
+
+            <h2>How it Works</h2>
+            <p>
+                By leveraging sophisticated algorithms, the platform analyzes imaging data to identify patterns
+                indicative
+                of different types of brain tumors. Users can engage with the prediction button to simulate the
+                classification process. Please note that in this demo, the prediction button is a placeholder and
+                doesn't
+                perform any actual classification.
+            </p>
+
+            <div class="button-container">
+                <a href="/predict" class="prediction-button">Classify Tumor</a>
+            </div>
+
+            <p>
+                As we delve into the realm of brain tumor classification, it's important to recognize the collaborative
+                efforts of medical professionals, researchers, and technologists working towards advancements that
+                positively impact patient outcomes.
+            </p>
+        </div>
+        <div class="im2"></div>
+    </div>
+</body>
+
+</html>
